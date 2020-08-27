@@ -1,0 +1,20 @@
+{
+  "name": "this-person-does-not-exist",
+  "version": "1.0.0",
+  "description": "git remote add origin https://github.com/tchibu/this-person-does-not-exist.git",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "tchibu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "@types/twitter": "^1.7.0"
+  }
+}
