@@ -1,13 +1,13 @@
 start().catch(e => console.error(e));
 async function start() {
+    require('dotenv').config();
     const axios = require('axios');
     const Twitter = require('twitter');
-    const twitterCredentials = require('./twitter-credentials');
     const client = new Twitter({
-        consumer_key: twitterCredentials.apiKey || process.env.API_KEY,
-        consumer_secret: twitterCredentials.secretKey || process.env.SECRET_KEY,
-        access_token_key: twitterCredentials.accessTokenKey || process.env.ACCESS_TOKEN_KEY,
-        access_token_secret: twitterCredentials.accessTokenSecret || process.env.ACCESS_TOKEN_SECRET
+        consumer_key: process.env.API_KEY || '',
+        consumer_secret: process.env.SECRET_KEY || '',
+        access_token_key: process.env.ACCESS_TOKEN_KEY || '',
+        access_token_secret: process.env.ACCESS_TOKEN_SECRET || ''
     });
     const response = await axios.get('https://thispersondoesnotexist.com/image', {responseType: 'arraybuffer'});
     const mediaUpload = await client.post('media/upload', {media: response.data});
